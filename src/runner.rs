@@ -1333,4 +1333,27 @@ mod tests {
 
 		assert_eq!(stack.len(), 0);
 	}
+
+	#[cfg(nightly)]
+	mod benches {
+		use super::*;
+		use test::Bencher;
+
+		#[bench]
+		fn value_stack_use_push_one_by_one(b: &mut Bencher) {
+		}
+
+		#[bench]
+		fn value_stack_use_extend(b: &mut Bencher) {
+			let mut stack = ValueStack::with_limit(1024);
+			let values = vec![];
+			for i in 0..1024 {
+			    values.push(RuntimeValue::I32(i));
+			}
+
+			b.iter(|| {
+				
+			});
+		}
+	}
 }

@@ -94,6 +94,8 @@
 //! }
 //! ```
 
+#![cfg_attr(nightly, feature(test))]
+
 #![warn(missing_docs)]
 
 #[cfg(test)]
@@ -101,6 +103,9 @@ extern crate wabt;
 #[cfg(test)]
 #[macro_use]
 extern crate assert_matches;
+
+#[cfg(nightly)]
+extern crate test;
 
 extern crate parity_wasm;
 extern crate byteorder;
